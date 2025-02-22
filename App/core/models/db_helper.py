@@ -4,11 +4,8 @@ from core.config import settings
 
 
 class DatabaseHelper:
-    def __init__(self, url: str, echo: bool = False):
-        self.engine: AsyncEngine = create_async_engine(
-            url=url,
-            echo=echo,
-        )
+    def __init__(self, url: str):
+        self.engine: AsyncEngine = create_async_engine(url=url)
 
         self.session_factory = async_sessionmaker(
             bind=self.engine,
@@ -24,4 +21,4 @@ class DatabaseHelper:
             yield session
 
 
-db_helper = DatabaseHelper(settings.db.url, settings.db.url)
+db_helper = DatabaseHelper(str(settings.db.url))
