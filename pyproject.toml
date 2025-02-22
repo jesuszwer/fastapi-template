@@ -1,20 +1,32 @@
 [project]
-name = "fastapi-shopapp"
-version = "0.1.0"
-description = ""
 authors = [
-    {name = "jesuszwer",email = "zakianovd001@gmail.com"}
+  {name = "jesuszwer", email = "zakianovd001@gmail.com"},
 ]
+dependencies = [
+  "fastapi (>=0.115.8,<0.116.0)",
+  "uvicorn (>=0.34.0,<0.35.0)",
+  "pydantic-settings (>=2.8.0,<3.0.0)",
+]
+description = ""
 license = {text = "MIT"}
+name = "fastapi-shopapp"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "fastapi (>=0.115.8,<0.116.0)",
-    "uvicorn (>=0.34.0,<0.35.0)",
-    "pydantic-settings (>=2.8.0,<3.0.0)"
-]
-
+version = "0.1.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+
+# poetry settings
+
+[tool.ruff]
+line-length = 88
+select = [
+  "E",
+  "F",
+  "I",
+]
+
+[tool.ruff.format]
+quote-style = "double"
