@@ -1,0 +1,9 @@
+[app]
+host = "localhost"
+name = "app-name"
+port = 8000
+reload = true
+
+[db]
+echo = true
+url = "postgresql+asyncpg://user:password@localhost:5432/db_name"
