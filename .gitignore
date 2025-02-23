@@ -135,6 +135,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+App/dev.toml
+App/test.toml
+App/project.toml
 
 # Spyder project settings
 .spyderproject
