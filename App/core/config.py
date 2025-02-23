@@ -9,6 +9,11 @@ class ApplicationConfig(BaseModel):
     reload: bool
 
 
+class ApiConfig(BaseModel):
+    version: int = 1
+    prefix: str = "/api"
+
+
 class DatabaseConfig(BaseModel):
     echo: bool
     url: PostgresDsn
@@ -24,6 +29,7 @@ class DatabaseConfig(BaseModel):
 
 class Settings(BaseSettings):
     app: ApplicationConfig
+    api: ApiConfig = ApiConfig()
     db: DatabaseConfig
 
     model_config = SettingsConfigDict(
